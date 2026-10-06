@@ -1,0 +1,431 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #08090c;
+  --panel: #101218;
+  --line: #292d38;
+  --text: #f5f6fa;
+  --muted: #9298a6;
+  --accent: #8792ff;
+  --accent-bg: #202643;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% -12%, #1a1e32 0, #08090c 42%);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.topbar {
+  height: 74px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6vw;
+  background: rgba(8, 9, 12, 0.92);
+  backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+.brand-mark {
+  width: 31px;
+  height: 31px;
+  border: 1px solid #5964a0;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  color: #bbc1ff;
+  font-weight: 800;
+}
+
+.tagline {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.container {
+  width: min(1050px, 92%);
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.hero {
+  padding: 72px 0 34px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.19em;
+  color: var(--accent);
+  font-weight: 800;
+  margin: 0 0 9px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+  margin: 0;
+}
+
+.hero p:not(.eyebrow) {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 16px 0 0;
+}
+
+.categories {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  padding: 5px 0 17px;
+  scrollbar-width: thin;
+}
+
+.categories button {
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--muted);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.categories button:hover {
+  color: var(--text);
+  border-color: #4a5060;
+}
+
+.categories button.active {
+  color: #fff;
+  background: var(--accent-bg);
+  border-color: #606bc0;
+}
+
+.converter-card,
+.steps-card {
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  background: linear-gradient(180deg, #12151c, #0e1016);
+  box-shadow: 0 22px 65px rgba(0, 0, 0, 0.25);
+}
+
+.converter-card {
+  padding: 30px;
+}
+
+.card-head {
+  margin-bottom: 22px;
+}
+
+.card-head h2 {
+  font-size: 26px;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+.equation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 65px minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  padding: 12px 0 5px;
+}
+
+.conversion-side {
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+  height: 82px;
+}
+
+.conversion-side input,
+.output-value {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--line);
+  border-right: 0;
+  border-radius: 13px 0 0 13px;
+  background: #080a0f;
+  color: #fff;
+  padding: 0 20px;
+  font-size: 30px;
+  font-weight: 700;
+  outline: none;
+}
+
+.conversion-side input:focus {
+  border-color: #6875cf;
+  box-shadow: 0 0 0 3px rgba(104, 117, 207, 0.12);
+}
+
+.conversion-side select {
+  width: 190px;
+  min-width: 150px;
+  border: 1px solid var(--line);
+  border-radius: 0 13px 13px 0;
+  background: #1b1e27;
+  color: #f3f4f8;
+  padding: 0 38px 0 14px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.conversion-side select option {
+  background: #171a22;
+  color: #f5f6fa;
+  padding: 10px;
+}
+
+.output-value {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  white-space: nowrap;
+  border-right: 1px solid var(--line);
+}
+
+.arrow {
+  font-size: 42px;
+  text-align: center;
+  color: #737a8b;
+  font-weight: 300;
+}
+
+.swap-btn {
+  margin: 14px auto 0;
+  display: block;
+  border: 1px solid var(--line);
+  background: #151821;
+  color: #d9dce5;
+  border-radius: 10px;
+  padding: 9px 14px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.swap-btn:hover {
+  border-color: #59617a;
+}
+
+.formula {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: #9da4b3;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.formula strong {
+  color: #d9ddff;
+}
+
+.result-line {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.result-line strong {
+  color: #e5e8ef;
+}
+
+.steps-card {
+  padding: 30px;
+  margin: 20px 0 60px;
+}
+
+.steps-head h2 {
+  font-size: 25px;
+  margin: 0 0 8px;
+  letter-spacing: -0.03em;
+}
+
+.steps-head > p:last-child {
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 15px;
+  padding: 17px 0;
+  border-top: 1px solid var(--line);
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-bg);
+  border: 1px solid #5965b8;
+  color: #dce0ff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.step h3 {
+  margin: 0 0 5px;
+  font-size: 15px;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.math {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 9px 11px;
+  border: 1px solid #2b3040;
+  background: #090b10;
+  border-radius: 8px;
+  color: #e5e8ff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+.final-step {
+  margin-top: 4px;
+  padding: 14px;
+  border: 1px solid #394269;
+  background: #151a2b;
+  border-radius: 10px;
+  color: #eef0ff;
+}
+
+.ohms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ohm-field label {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.ohm-field input {
+  width: 100%;
+  height: 68px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #080a0f;
+  color: #fff;
+  padding: 0 16px;
+  font-size: 25px;
+  font-weight: 650;
+  outline: none;
+}
+
+.ohm-field input:focus {
+  border-color: #6875cf;
+}
+
+.ohm-result {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #0a0c11;
+}
+
+.ohm-result strong {
+  font-size: 22px;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid var(--line);
+  padding: 25px;
+  color: #626977;
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    padding: 0 4%;
+  }
+
+  .tagline {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .converter-card,
+  .steps-card {
+    padding: 20px;
+  }
+
+  .equation {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+    font-size: 34px;
+    height: 32px;
+  }
+
+  .conversion-side {
+    height: 68px;
+  }
+
+  .conversion-side input,
+  .output-value {
+    font-size: 24px;
+    padding: 0 14px;
+  }
+
+  .conversion-side select {
+    width: 145px;
+    min-width: 125px;
+    font-size: 13px;
+  }
+
+  .ohms-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

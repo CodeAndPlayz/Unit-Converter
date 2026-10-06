@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert units quickly with a clean, interactive calculator.">
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">U</span>
+        <span>Unit Converter</span>
+      </div>
+      <span class="tagline">Convert measurements quickly</span>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <p class="eyebrow">UNIT CONVERTER</p>
+        <h1>Convert it simply.</h1>
+        <p>Enter a value, choose the units, and see the conversion instantly.</p>
+      </section>
+
+      <nav class="categories" id="categories" aria-label="Unit categories"></nav>
+
+      <section class="converter-card">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow" id="categoryLabel">VOLUME</p>
+            <h2 id="categoryTitle">Volume</h2>
+          </div>
+        </div>
+
+        <div id="converterArea"></div>
+        <div class="formula" id="formula"></div>
+      </section>
+
+      <section class="steps-card">
+        <div class="steps-head">
+          <p class="eyebrow">LEARN THE CALCULATION</p>
+          <h2>Step-by-Step Solution</h2>
+          <p id="stepsIntro"></p>
+        </div>
+        <div id="steps"></div>
+      </section>
+    </main>
+
+    <footer>Unit Converter</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
